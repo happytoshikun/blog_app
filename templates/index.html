@@ -1,0 +1,16 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}TOPページ{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>TOPページ</h1>
+    </br>
+    <p>
+        <button type=“button” onclick="location.href='/login'" class="btn btn-primary">ログイン画面</button>
+    </p>
+    </br>
+    <p>
+        <button type=“button” onclick="location.href='/signup'" class="btn btn-primary">新規ユーザー登録</button>
+    </p>
+</div>
+{% endblock %}

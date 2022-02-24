@@ -1,0 +1,24 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}ブログページ{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>ブログ</h1>
+    <p>
+        <button type=“button” onclick="location.href='/create'" class="btn btn-primary">新規投稿画面</button>
+        &nbsp;
+        &nbsp;
+        <button type=“button” onclick="location.href='/logout'" class="btn btn-primary">ログアウト</button>
+    </p>
+    
+    {% for post in posts %}
+    <article>
+        <h2>{{ post.title }}</h2>
+        <a href="/{{post.id}}/update" role="button">編集</a>
+        <a href="/{{post.id}}/delete" role="button">削除</a>
+        <p>作成日時: {{ post.created_at }}</p>
+        <p>{{ post.body }}</p>
+    </article>
+    {% endfor %}
+</div>
+{% endblock %}
